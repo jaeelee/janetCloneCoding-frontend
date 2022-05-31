@@ -18,7 +18,6 @@ const SearchForm = styled.form`
   justify-content: space-between;
   border-radius: 30px;
   border: 1.5px solid transparent;
-  /* border: 1.5px solid #9c57f5; */
   width: 400px;
   height: 35px;
   background-image: linear-gradient(#fff, #fff),
@@ -33,7 +32,6 @@ const SearchTitle = styled.div`
   padding: 0px 10px 0px 25px;
   font-size: 14px;
   width: 100px;
-  color: #9c57f5;
 `;
 
 const SearchBtn = styled.button`
