@@ -17,18 +17,25 @@ input{
     display: flex;
     justify-content: space-between;
     border-radius: 30px;
-    border: 2px solid blue;
+    border: 1.5px solid purple;
     width: 400px;
-    height: 30px
+    height: 35px;
 }
 .searchTitle{
-    margin: 5px;
+    margin: 0;
+    line-height: 36px;
+    padding: 0px 10px 0px 25px;
+    font-size: 14px;
     width: 100px;
 }
 .searchInput{
     width: 100%;
 }
+.searchInput ::marker{
+    background-color: tomato;
+}
 .searchBtn{
+    vertical-align: middle;
     width: 30px;
     height: 30px;
 }

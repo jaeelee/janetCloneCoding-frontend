@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
+import SearchBar from "./SearchBar";
 
 function Header() {
   return (
@@ -12,7 +13,8 @@ function Header() {
         />
       </a>
 
-      <form className={`${styles.searchForm}`}>
+      <SearchBar />
+      {/* <form className={`${styles.searchForm}`}>
         <div className={`${styles.searchTitle}`}>통합검색</div>
         <input
           type="text"
@@ -26,7 +28,11 @@ function Header() {
             alt="검색"
           />
         </button>
-      </form>
+      </form> */}
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
     </header>
   );
 }
