@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 const widthAnimation = keyframes`
@@ -11,16 +11,20 @@ const Wrapper = styled.div`
   .active {
     animation: ${widthAnimation} 0.5s ease-in;
     animation-fill-mode: forwards;
-    /* width: 600px; */
   }
 `;
 const SearchForm = styled.form`
   display: flex;
   justify-content: space-between;
   border-radius: 30px;
-  border: 1.5px solid #9c57f5;
+  border: 1.5px solid transparent;
+  /* border: 1.5px solid #9c57f5; */
   width: 400px;
   height: 35px;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, #9c57f5 70%, #4eafd6 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 `;
 
 const SearchTitle = styled.div`
@@ -54,14 +58,22 @@ const SearchInput = styled.input`
 `;
 
 function SearchBar() {
+  const [search, setSearch] = useState("");
+
   const onClick = (event) => {
     event.target.parentElement.classList.add("active");
   };
+  const onChange = (event) => setSearch(event.target.value);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    window.location.href = `https://janet.co.kr/search/search?stx=${search}`;
+  };
   return (
     <Wrapper>
-      <SearchForm>
+      <SearchForm onSubmit={onSubmit}>
         <SearchTitle>통합검색</SearchTitle>
         <SearchInput
+          onChange={onChange}
           onClick={onClick}
           type="text"
           placeholder="자격증 꿀팁 보러가기 #취준 #취뽀"
