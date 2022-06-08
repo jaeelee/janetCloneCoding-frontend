@@ -9,9 +9,12 @@ body {
     margin: 0;
     height: 100%;
 }
-
+input{
+    border: 0;
+}
 .Wrapper{
     margin: 10px auto;
-    width: 1900px;
+
+    min-width: 1250px;
     /* background-color: tomato; */
 }

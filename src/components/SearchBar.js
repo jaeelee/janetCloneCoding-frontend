@@ -21,7 +21,8 @@ const SearchForm = styled.form`
   width: 400px;
   height: 35px;
   background-image: linear-gradient(#fff, #fff),
-    linear-gradient(to right, #9c57f5 70%, #4eafd6 100%);
+    linear-gradient(to right, #9c56f5 70%, #7b7afe 100%);
+  /* linear-gradient(to right, #9c57f5 70%, #4eafd6 100%); */
   background-origin: border-box;
   background-clip: content-box, border-box;
 `;
