@@ -32,14 +32,15 @@ function Header() {
             <img
               src="https://janet.co.kr/html_demo/img/common/logo.png"
               alt="자격증넷"
+              title="자격증넷"
             />
           </Logo>
           <SearchBar />
         </Content>
         <Content>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
+          <button>회원가입</button>
+          <button>로그인</button>
+          <button>기업서비스</button>
         </Content>
       </Navbar>
       <Navbar>

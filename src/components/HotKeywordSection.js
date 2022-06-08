@@ -18,10 +18,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
   align-items: center;
   height: 40px;
   font-size: 28px;
+  margin: 0 0 20px;
 `;
 
 function HotKeywordSection() {
