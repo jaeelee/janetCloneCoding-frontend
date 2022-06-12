@@ -36,13 +36,13 @@ const SearchTitle = styled.div`
 `;
 
 const SearchBtn = styled.button`
+  padding: 0;
   img {
     vertical-align: middle;
     width: 30px;
     height: 30px;
-    padding: 0px 3px;
+    padding-right: 3px;
   }
-  padding: 0;
 `;
 
 const SearchInput = styled.input`

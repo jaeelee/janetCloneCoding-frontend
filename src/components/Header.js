@@ -15,14 +15,30 @@ const Navbar = styled.div`
 const Content = styled.div`
   display: flex;
   align-items: center;
-  button {
-    padding-right: 10px;
+`;
+
+const Link = styled.a`
+  padding: 15px;
+  font-weight: 500;
+  color: #919191;
+  font-size: 14px;
+  text-align: center;
+  div {
+    margin-top: 10px;
   }
 `;
 
 const Logo = styled.a`
   margin: 0 30px 0 0;
 `;
+
+const NavButton = styled.button`
+  width: ${(props) => `${props.width}`};
+  padding: 0;
+  margin: auto;
+  font-size: 17px;
+`;
+
 function Header() {
   return (
     <Wrapper>
@@ -38,24 +54,62 @@ function Header() {
           <SearchBar />
         </Content>
         <Content>
-          <button>회원가입</button>
-          <button>로그인</button>
-          <button>기업서비스</button>
+          <Link>
+            <img
+              src="https://janet.co.kr/img/common/header/member.png"
+              alt="회원가입"
+            />
+            <div>회원가입</div>
+          </Link>
+          <Link>
+            <img
+              src="https://janet.co.kr/img/common/header/login.png"
+              alt="로그인"
+            />
+            <div>로그인</div>
+          </Link>
+          <Link>
+            <img
+              src="https://janet.co.kr/img/common/header/company.png"
+              alt="기업서비스"
+            />
+            <div>기업서비스</div>
+          </Link>
         </Content>
       </Navbar>
       <Navbar>
         <Content>
-          <button></button>
-          <button>Top100</button>
-          <button>자격증정보</button>
-          <button>어학/공무원</button>
-          <button>자넷info</button>
-          <button>자넷톡</button>
+          <NavButton>
+            <img
+              src="https://janet.co.kr/img/common/header/gnb.png"
+              alt="navBtn"
+            />
+          </NavButton>
+          <NavButton width="100px">Top100</NavButton>
+          <NavButton width="100px">자격증정보</NavButton>
+          <NavButton width="100px">어학/공무원</NavButton>
+          <NavButton width="80px">자넷info</NavButton>
+          <NavButton width="80px">자넷톡</NavButton>
         </Content>
         <Content>
-          <button>우리동네학원</button>
-          <button>커뮤니티</button>
-          <button>자격증AI</button>
+          <Link>
+            <img
+              src="https://janet.co.kr/img/common/header/aca.png"
+              alt="우리동네학원"
+            />
+          </Link>
+          <Link>
+            <img
+              src="https://janet.co.kr/img/common/header/commu.png"
+              alt="커뮤니티"
+            />
+          </Link>
+          <Link>
+            <img
+              src="https://janet.co.kr/img/common/header/ai.png"
+              alt="자격증ai"
+            />
+          </Link>
         </Content>
       </Navbar>
     </Wrapper>
