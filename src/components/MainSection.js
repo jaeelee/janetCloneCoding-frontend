@@ -36,18 +36,45 @@ const Info = styled.div`
 
 const Rank = styled.div`
   box-sizing: border-box;
-  padding: 40px;
+  padding: 40px 30px 35px;
   width: 260px;
   h1 {
     margin: auto;
     font-size: 18px;
   }
   ol {
-    padding: 0 0 0 20px;
+    counter-reset: list-number;
+    box-sizing: border-box;
+    font-size: 13px;
+    padding: 25px 0;
+    height: 300px;
+  }
+  li {
+    counter-increment: list-number;
+    height: 10%;
+    &::before {
+      width: 20px;
+      text-align: center;
+      content: counter(list-number);
+      display: inline-block;
+      color: #bababa;
+    }
   }
 `;
 
 function MainSection() {
+  const rank = [
+    "전기기사",
+    "산업안전기사",
+    "위험물산업기사",
+    "전기산업기사",
+    "건축기사",
+    "건설안전기사",
+    "소방설비기사(전기분야)",
+    "제품디자인산업기사",
+    "건설기계정비산업기사",
+    "사출금형산업기사",
+  ];
   return (
     <Section>
       <Wrapper>
@@ -64,16 +91,11 @@ function MainSection() {
         <Rank>
           <h1>기사 인기순위</h1>
           <ol>
-            <li>전기기사</li>
-            <li>산업안전기사</li>
-            <li>위험물산업기사</li>
-            <li>전기산업기사</li>
-            <li>건축기사</li>
-            <li>건설안전기사</li>
-            <li>소방설비기사(전기분야)</li>
-            <li>제품디자인산업기사</li>
-            <li>건설기계정비산업기사</li>
-            <li>사출금형산업기사</li>
+            {rank.map((item, index) => (
+              <li className="rankList" key={index}>
+                <span>{item}</span>
+              </li>
+            ))}
           </ol>
         </Rank>
       </Wrapper>
