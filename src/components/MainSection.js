@@ -19,7 +19,6 @@ const Wrapper = styled.div`
   margin: auto;
   justify-content: space-between;
   div {
-    height: 100%;
     background-color: white;
   }
 `;
@@ -30,18 +29,17 @@ const Banner = styled.div`
 
 const Info = styled.div`
   box-sizing: border-box;
-  padding: 40px;
+  padding: 40px 30px 35px;
   width: 540px;
+  .imgBox {
+    text-align: center;
+  }
 `;
 
 const Rank = styled.div`
   box-sizing: border-box;
   padding: 40px 30px 35px;
   width: 260px;
-  h1 {
-    margin: auto;
-    font-size: 18px;
-  }
   ol {
     counter-reset: list-number;
     box-sizing: border-box;
@@ -62,6 +60,42 @@ const Rank = styled.div`
   }
 `;
 
+const Title = styled.h1`
+  margin: auto;
+  font-size: 18px;
+`;
+
+const InfoBox = styled.div`
+  box-sizing: border-box;
+  height: 225px;
+  padding: 20px 10px;
+  li {
+    box-sizing: border-box;
+    width: 230px;
+    height: 80px;
+    padding: 10px 20px;
+    list-style: none;
+    float: left;
+    display: flex;
+  }
+  img {
+    margin-right: 20px;
+  }
+  .text {
+    width: 85px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #333333;
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+    font-size: 13px;
+  }
+`;
+
 function MainSection() {
   const rank = [
     "전기기사",
@@ -75,6 +109,34 @@ function MainSection() {
     "건설기계정비산업기사",
     "사출금형산업기사",
   ];
+
+  const info = [
+    {
+      id: "1",
+      title: "자격증정보",
+      text: "자격증정보의 모든 것",
+      src: "https://janet.co.kr/html_demo/img/main/inCrfc.png",
+    },
+    {
+      id: "2",
+      title: "계열별정보",
+      text: "자격증에 대하여 알려드립니다.",
+      src: "https://janet.co.kr/html_demo/img/main/iCrtfc.png",
+    },
+    {
+      id: "3",
+      title: "자격증 공모전",
+      text: "자격증 관련 공모전 정보 확인하기",
+      src: "https://janet.co.kr/html_demo/img/main/sCrtfc.png",
+    },
+    {
+      id: "4",
+      title: "시험접수안내",
+      text: "필기/실기 기본접수안내",
+      src: "https://janet.co.kr/html_demo/img/main/rCrtfc.png",
+    },
+  ];
+
   return (
     <Section>
       <Wrapper>
@@ -83,13 +145,26 @@ function MainSection() {
             src="https://janet.co.kr/img/common/main/banner/mainBn_top_01.png"
             alt="Banner"
           />
-          {/* <img src="https://janet.co.kr/img/common/main/banner/mainBn_top_02.png" />
-          <img src="https://janet.co.kr/img/common/main/banner/mainBn_top_03.png" />
-          <img src="https://janet.co.kr/img/common/main/banner/mainBn_top_04.png" /> */}
         </Banner>
-        <Info></Info>
+        <Info>
+          <Title>자격증정보</Title>
+          <InfoBox>
+            {info.map((info) => (
+              <li key={info.id}>
+                <img src={info.src} />
+                <div className="text">
+                  <h3>{info.title}</h3>
+                  <p>{info.text}</p>
+                </div>
+              </li>
+            ))}
+          </InfoBox>
+          <div className="imgBox">
+            <img src="https://janet.co.kr/data/ebslider/eb4_basic/img/d0942d969f0a37cb73a46db345ea874b.png" />
+          </div>
+        </Info>
         <Rank>
-          <h1>기사 인기순위</h1>
+          <Title>기사 인기순위</Title>
           <ol>
             {rank.map((item, index) => (
               <li className="rankList" key={index}>
